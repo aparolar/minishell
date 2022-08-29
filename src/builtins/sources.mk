@@ -1,0 +1,19 @@
+SRC_BUILTINS	=	is_builtin\
+					execute_builtin\
+					do_builtin_fork\
+					do_builtin_with_prefork\
+					do_builtin_with_postfork\
+					builtin_echo\
+					builtin_cd\
+					builtin_pwd\
+					builtin_export\
+					builtin_export_burbuja\
+					builtin_export_var\
+					get_name_var_to_export\
+					check_name_var_to_export\
+					get_value_var_to_export\
+					builtin_unset\
+					builtin_env\
+					builtin_exit\
+					get_index\
+					ft_strmaxlen
