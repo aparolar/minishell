@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/22 10:11:55 by aparolar          #+#    #+#             */
-/*   Updated: 2022/06/21 14:16:12 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/01 17:15:47 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static int	merge_redirs(void *c_before, void *content, void *c_after)
 	t_token	*before;
 	int		is_sor;
 
+	(void)c_after;
 	token = content;
 	before = c_before;
 	is_sor = 0;
@@ -67,8 +68,8 @@ static int	check_bad_format(void *c_before, void *content, void *c_after)
 int	check_consistence(t_list **command_lst)
 {
 	t_list	*token_lst;
-	t_list	*split;
 
+	(void)command_lst;
 	token_lst = gs_info()->tk;
 	ft_lstiter_bpa_if(token_lst, merge_redirs);
 	return (ft_lstiter_bpa_if(token_lst, check_bad_format));

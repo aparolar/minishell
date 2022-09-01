@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 12:58:03 by aparolar          #+#    #+#             */
-/*   Updated: 2022/07/02 12:51:54 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/01 17:18:34 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static char	*expand_herdoc(char *line)
 
 static void	on_signal(int signo)
 {
+	(void)signo;
 	ft_putchar_fd('\n', 2);
 	exit(130);
 }

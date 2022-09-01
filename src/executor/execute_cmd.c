@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 09:18:43 by aparolar          #+#    #+#             */
-/*   Updated: 2022/07/02 12:22:35 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/01 17:17:41 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static t_command	*exec_new(int fd_in, t_command *cmd, t_env_node *env)
 	t_token	*token;
 	char	*str_cmd;
 
+	(void)env;
 	if (cmd->argv)
 	{
 		token = cmd->argv->content;

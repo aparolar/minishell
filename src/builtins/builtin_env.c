@@ -6,7 +6,7 @@
 /*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:34:05 by icastell          #+#    #+#             */
-/*   Updated: 2022/06/20 16:55:35 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/01 17:12:19 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	builtin_env(t_command *cmd)
 {
 	t_env_node	*node;
 
+	(void)cmd;
 	node = gs_info()->env;
 	while (node)
 	{

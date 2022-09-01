@@ -6,7 +6,7 @@
 /*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 10:58:49 by icastell          #+#    #+#             */
-/*   Updated: 2022/06/28 18:23:58 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/01 17:10:28 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static void	insert_var(t_export *export)
 
 void	builtin_export_var(char **argv)
 {
-	int			i;
 	t_export	export;
 
 	export.str = argv;

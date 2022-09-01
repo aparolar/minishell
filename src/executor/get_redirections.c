@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 14:36:52 by aparolar          #+#    #+#             */
-/*   Updated: 2022/06/27 12:07:42 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/01 17:20:32 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	get_dinput(t_command *cmd, t_token *token)
 {
+	(void)token;
 	close(cmd->fd_in);
 	cmd->fd_in = open("/tmp/.hd_tmp", O_RDONLY, 0666);
 }

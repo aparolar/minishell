@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 12:29:30 by aparolar          #+#    #+#             */
-/*   Updated: 2022/06/26 18:06:09 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/01 17:22:03 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	err_permission_deny(t_command *cmd, char *filename)
 {
+	(void)cmd;
 	ft_putstr_fd("Minishell: ", 2);
 	ft_putstr_fd(filename, 2);
 	ft_putstr_fd(" -> ", 2);

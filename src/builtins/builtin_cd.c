@@ -6,7 +6,7 @@
 /*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 13:11:46 by icastell          #+#    #+#             */
-/*   Updated: 2022/06/26 20:22:23 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/01 17:08:36 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ void	builtin_post_cd(t_command *cmd)
 
 void	builtin_cd(t_command *cmd)
 {
+	(void)cmd;
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 11:31:34 by aparolar          #+#    #+#             */
-/*   Updated: 2022/06/12 14:56:14 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/01 17:16:31 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ static void	on_cmd(void *content)
 
 void	expanse_vars(t_list *cmd_lst, t_env_node *env)
 {
+	(void)env;
 	ft_lstiter(cmd_lst, on_cmd);
 }

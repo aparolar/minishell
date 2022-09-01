@@ -6,7 +6,7 @@
 /*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:21:49 by icastell          #+#    #+#             */
-/*   Updated: 2022/06/20 18:06:56 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/01 17:11:53 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	builtin_pre_unset(t_command *cmd)
 {
 	char		**argv;
-	t_builtin	builtin;
 
 	errno = 0;
 	argv = get_array_from_token_lst(cmd->argv);
@@ -30,5 +29,6 @@ void	builtin_pre_unset(t_command *cmd)
 
 void	builtin_unset(t_command *cmd)
 {
+	(void)cmd;
 	return ;
 }

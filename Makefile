@@ -6,7 +6,7 @@
 #    By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/28 14:55:48 by aparolar          #+#    #+#              #
-#    Updated: 2022/08/29 10:13:45 by aparolar         ###   ########.fr        #
+#    Updated: 2022/09/01 18:21:11 by aparolar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@
 -include src/signals/sources.mk
 
 NAME			=	minishell
-LIBFT			=	libft/
+LIBFT			=	libft
 SRC				=	minishell info clean input print exit_controlled
 SRCS			=	$(addprefix src/, $(addsuffix .c, $(SRC))) \
 					$(addprefix src/env/, $(addsuffix .c, $(SRC_ENV))) \
@@ -38,7 +38,9 @@ SRCS			=	$(addprefix src/, $(addsuffix .c, $(SRC))) \
 OBJS			=	$(SRCS:.c=.o)
 DBFLAGS			=	-g3 -fsanitize=address
 FLAGS			=	-Wall -Werror -Wextra
-CC				=	gcc $(DBFLAGS)
+#LDFLAGS			=	"-L/Users/aparolar/.brew/opt/readline/lib"
+CPPFLAGS		=	"-I/Users/aparolar/.brew/opt/readline/include"
+CC				=	gcc $(FLAGS) $(LDFLAGS) $(CPPFLAGS)
 
 $(NAME):	$(OBJS)
 	@make -s -C $(LIBFT)
