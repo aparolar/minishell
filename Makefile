@@ -6,7 +6,7 @@
 #    By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/28 14:55:48 by aparolar          #+#    #+#              #
-#    Updated: 2022/09/01 18:21:11 by aparolar         ###   ########.fr        #
+#    Updated: 2022/09/01 18:41:20 by aparolar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ clean:
 #	rm -f src/signals/*.o
 
 fclean:		clean
-#	make fclean -s -C $(LIBFT)
+	make fclean -s -C $(LIBFT)
 	rm -f $(NAME)
 
 test:		re
