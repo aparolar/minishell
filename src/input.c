@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 20:03:44 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/02 13:02:05 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/02 16:49:20 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ static char	*get_input(void)
 	printf("[%s]\n", cmd);
 	if (cmd && *cmd)
 		add_history(cmd);
+	printf("[%i][%i]\n", history_total_bytes(), history_length);
 	return (cmd);
 }
 
