@@ -6,7 +6,7 @@
 #    By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/28 14:55:48 by aparolar          #+#    #+#              #
-#    Updated: 2022/09/01 18:41:20 by aparolar         ###   ########.fr        #
+#    Updated: 2022/09/02 12:59:26 by aparolar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,14 +38,14 @@ SRCS			=	$(addprefix src/, $(addsuffix .c, $(SRC))) \
 OBJS			=	$(SRCS:.c=.o)
 DBFLAGS			=	-g3 -fsanitize=address
 FLAGS			=	-Wall -Werror -Wextra
-#LDFLAGS			=	"-L/Users/aparolar/.brew/opt/readline/lib"
-CPPFLAGS		=	"-I/Users/aparolar/.brew/opt/readline/include"
-CC				=	gcc $(FLAGS) $(LDFLAGS) $(CPPFLAGS)
+LDFLAGS			=	-L /Volumes/sgoinfre/students/$(USER)/homebrew/Cellar/readline/8.1.2/lib#~/.brew/opt/readline/lib -Llibft
+CPPFLAGS		=	-I /Volumes/sgoinfre/students/$(USER)/homebrew/Cellar/readline/8.1.2/include#~/.brew/opt/readline/include
+CC				=	gcc $(FLAGS)
 
 $(NAME):	$(OBJS)
-	@make -s -C $(LIBFT)
-	@$(CC) $(SRCS) -L $(LIBFT) -lft -lreadline -o $(NAME)
-	@printf "Completed\n"
+	make -s -C $(LIBFT)
+	$(CC) $(SRCS) -lft -L$(LIBFT) -lhistory -lreadline $(LDFLAGS) $(CPPFLAGS) -o $(NAME)
+	printf "Completed\n"
 
 all:		$(NAME)
 
@@ -54,13 +54,6 @@ re:			fclean all
 clean:
 	make clean -s -C $(LIBFT)
 	rm -f $(OBJS)
-#	rm -f src/*.o
-#	rm -f src/env/*.o
-#	rm -f src/parser/*.o
-#	rm -f src/builtins/*.o
-#	rm -f src/lexer/*.o
-#	rm -f src/executor/*.o
-#	rm -f src/signals/*.o
 
 fclean:		clean
 	make fclean -s -C $(LIBFT)
@@ -79,4 +72,5 @@ git_push:	fclean
 git_pull:
 	git pull --recurse-submodules
 
+.SILENT:	$(NAME)
 .PHONY:		all re clean fclean
