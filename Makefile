@@ -6,7 +6,7 @@
 #    By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/28 14:55:48 by aparolar          #+#    #+#              #
-#    Updated: 2022/09/02 12:59:26 by aparolar         ###   ########.fr        #
+#    Updated: 2022/09/02 18:26:18 by aparolar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ CC				=	gcc $(FLAGS)
 
 $(NAME):	$(OBJS)
 	make -s -C $(LIBFT)
-	$(CC) $(SRCS) -lft -L$(LIBFT) -lhistory -lreadline $(LDFLAGS) $(CPPFLAGS) -o $(NAME)
+	$(CC) $(SRCS) -lft -L$(LIBFT) -lreadline $(LDFLAGS) $(CPPFLAGS) -o $(NAME)
 	printf "Completed\n"
 
 all:		$(NAME)
