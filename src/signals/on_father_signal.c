@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 12:48:20 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/02 17:43:18 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/03 19:39:14 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	on_father_signal(int signo)
 {
 	if (signo == SIGINT)
 	{
-		write(2, "\n", 1);
-		rl_on_new_line();
+		//write(2, "\n", 1);
 		rl_replace_line("", 0);
+		rl_on_new_line();
 		rl_redisplay();
 	}
 }

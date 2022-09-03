@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wait_cmds.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 12:59:24 by aparolar          #+#    #+#             */
-/*   Updated: 2022/07/03 18:46:07 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/03 19:27:56 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
