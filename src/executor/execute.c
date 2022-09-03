@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:19:09 by aparolar          #+#    #+#             */
-/*   Updated: 2022/07/02 12:52:18 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/03 11:12:46 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,11 @@ int	execute(int fd_in, t_command *cmd)
 		str_cmd = find_command(token->start);
 	}
 	if (!str_cmd)
-		str_cmd = ft_strdup(str_cmd);
+	{
+		access("", F_OK);
+		show_error(cmd, token->start);
+		return (0);
+	}
 	do_fork(str_cmd, fd_in, cmd);
 	free(str_cmd);
 	return (0);
