@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:49:57 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/03 21:05:18 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/04 16:46:55 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 # include "../libft/libft.h"
 # include <readline/readline.h>
 # include <readline/history.h>
-//# include <readline.h>
-//# include <history.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <sys/wait.h>
@@ -130,6 +128,7 @@ typedef struct s_minishell
 {
 	char				*error;
 	int					exit_status;
+	int					last_exit_status;
 	int					pipes;
 	char				*cmd_str;
 	int					heredoc_fd;

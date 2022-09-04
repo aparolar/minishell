@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 20:03:44 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/04 13:19:42 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/04 16:50:25 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	get_cmd(void)
 	while (1)
 	{
 		gs_info()->error = 0;
+		gs_info()->exit_status = 0;
 		gs_info()->heredoc_fd = -1;
 		cmd = get_input();
 		if (!cmd)
