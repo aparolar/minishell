@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 09:18:43 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/03 19:30:38 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/04 13:33:56 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	execute_cmd(t_list *cmd_lst, t_env_node *env_lst)
 	}
 	disable_main_signals();
 	wait_cmds(ft_lstsize(cmd_lst), get_last_command(cmd_lst)->pid);
-	write(2, "\n", 1);
 	init_main_signals();
 	return (0);
 }

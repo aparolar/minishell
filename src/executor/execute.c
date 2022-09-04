@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:19:09 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/03 19:26:36 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/04 13:34:19 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,6 @@ static int	check_output_redirs(t_command *cmd)
 	return (0);
 }
 
-static void	on_child_signal(int signo)
-{
-	if (signo == SIGINT)
-	{
-		printf("\n");
-		
-		exit(130);
-	}
-}
-
 static void	do_fork(char *str_cmd, int fd_in, t_command *cmd)
 {
 	char	**env;
@@ -58,7 +48,6 @@ static void	do_fork(char *str_cmd, int fd_in, t_command *cmd)
 	cmd->pid = fork();
 	if (cmd->pid == 0)
 	{
-		signal(SIGINT, on_child_signal);
 		if (gs_info()->exit_status)
 			exit(0);
 		get_redirections(cmd);
