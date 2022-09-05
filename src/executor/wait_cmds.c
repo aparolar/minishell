@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 12:59:24 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/05 11:49:54 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 11:57:06 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	get_signal(int exit_status)
 {
 	int	ret;
-	int sig;
+	int	sig;
 
 	ret = 0;
 	sig = 0;
