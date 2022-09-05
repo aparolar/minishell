@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 11:31:34 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/01 17:16:31 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 16:54:58 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ static void	on_expanse_token(void *content)
 	if (gs_info()->error)
 		return ;
 	token = content;
-	if (token->flags & TOKEN_TEXT && !(token->flags & TOKEN_EXPANDED))
+	if (token->flags & TOKEN_TEXT && !(token->flags & TOKEN_EXPANDED) &&
+		!(token->flags & TOKEN_DINPUT))
 		do_expanse_vars(token);
 }
 
