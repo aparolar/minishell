@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   on_father_signal.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 12:48:20 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/04 13:19:30 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 10:26:37 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

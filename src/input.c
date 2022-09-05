@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 20:03:44 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/04 13:19:42 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 10:23:25 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	*get_input(void)
 	char	*cmd;
 	char	*prompt;
 
-	write(1, "\r", 1);
+	//write(1, "\r", 1);
 	prompt = get_prompt();
 	cmd = readline(prompt);
 	free(prompt);
