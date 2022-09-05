@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:49:57 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/04 16:46:55 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 18:28:27 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
 # include "../libft/libft.h"
+# include "errors/errors.h"
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <unistd.h>
@@ -365,6 +366,7 @@ void			print_tokens(void *content);
 	Error Functions
 */
 
+void			print_error(char *name, char *param, char *msg);
 void			show_error(t_command *cmd, char *filename);
 void			err_cmd_not_found(t_command *cmd);
 void			err_file_dir_not_found(t_command *cmd, char *filename);

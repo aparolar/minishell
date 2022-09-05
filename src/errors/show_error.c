@@ -3,26 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   show_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 18:03:24 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/05 09:54:42 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 18:52:41 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
-
+/*
 void	show_error(t_command *cmd, char *filename)
 {
 	if (cmd->argv)
 		filename = ((t_token *)cmd->argv->content)->start;
 	if (errno == EACCES)
-		err_permission_deny(cmd, filename);
+		print_error("", filename, strerror(errno));
 	else if (errno == ENOENT)
-		err_file_dir_not_found(cmd, filename);
+		print_error(cmd, filename, strerror(errno));
 	else if (errno == ENOTDIR)
-		err_permission_deny(cmd, filename);
+		print_error(cmd, filename, strerror(errno));
 	else
 		printf("error\n");
 	errno = 0;
 }
+*/

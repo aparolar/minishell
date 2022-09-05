@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_name_var_to_export.c                           :+:      :+:    :+:   */
+/*   print_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/27 10:40:16 by icastell          #+#    #+#             */
-/*   Updated: 2022/09/05 17:58:47 by icastell         ###   ########.fr       */
+/*   Created: 2022/09/05 18:14:36 by icastell          #+#    #+#             */
+/*   Updated: 2022/09/05 18:59:49 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-void	get_name_var_to_export(t_export *export, char *str)
+void	print_error(char *name, char *param, char *msg)
 {
-	int	i;
-
-	i = 0;
-	export->index = get_index(str, '=');
-	if (export->index == 0)
-		export->name = ft_substr(str, 0, ft_strlen(str));
-	else if (export->index > 0)
-		export->name = ft_substr(str, 0, export->index);
-	check_name_var_to_export(export);
-	return ;
+	// a cambair minishell por el nombre de argv[0]
+	ft_putstr_fd("minishell: ", STDERR_FILENO);
+	if (name)
+	{
+		ft_putstr_fd(name, STDERR_FILENO);
+		ft_putstr_fd(": ", STDERR_FILENO);
+	}
+	if (param)
+	{
+		ft_putstr_fd("'", STDERR_FILENO);
+		ft_putstr_fd(param, STDERR_FILENO);
+		ft_putstr_fd("': ", STDERR_FILENO);
+	}
+	ft_putendl_fd(msg, STDERR_FILENO);
 }

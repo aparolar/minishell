@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_export_var.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 10:58:49 by icastell          #+#    #+#             */
-/*   Updated: 2022/09/01 17:10:28 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 18:30:07 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-static void	print_error(char *str)
+/*static void	print_error(char *str)
 {
 	ft_putstr_fd("export: '", STDOUT_FILENO);
 	ft_putstr_fd(str, STDOUT_FILENO);
 	ft_putstr_fd("': not a valid identifier", STDOUT_FILENO);
 	ft_putchar_fd('\n', STDOUT_FILENO);
 }
-
+*/
 static void	insert_var(t_export *export)
 {
 	int				i;
@@ -30,7 +30,7 @@ static void	insert_var(t_export *export)
 	{
 		get_name_var_to_export(export, export->str[i]);
 		if (export->check == 0)
-			print_error(export->str[i]);
+			print_error("export", export->str[i], NOT_VALID_IDENTIFIER);
 		else if (export->check == 1)
 		{
 			get_value_var_to_export(export, export->str[i]);
@@ -57,5 +57,4 @@ void	builtin_export_var(char **argv)
 	export.index = 0;
 	export.check = 0;
 	insert_var(&export);
-	return ;
 }

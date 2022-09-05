@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_redirecction_errors.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 13:24:50 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/03 10:54:25 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 19:00:48 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	check_redirecction_errors(int fd, char *filename)
 	if (fd == -1)
 	{
 		if (errno == EACCES)
-			err_permission_deny(NULL, filename);
+			print_error(filename, NULL, strerror(errno));
 		else
-			err_file_dir_not_found(NULL, filename);
+			print_error(filename, NULL, strerror(errno));
 		exit(1);
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:19:09 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/05 17:15:22 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 18:57:35 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ static void	do_fork(char *str_cmd, int fd_in, t_command *cmd)
 		env = get_env_array();
 		cmd->result = execve(str_cmd, argv, env);
 		if (cmd->result == -1)
-			show_error(cmd, str_cmd);
+			print_error(str_cmd, NULL, strerror(errno));
+//			show_error(cmd, str_cmd);
 		exit(cmd->result);
 	}
 	father_close_fds(fd_in, cmd);
@@ -78,7 +79,8 @@ int	execute(int fd_in, t_command *cmd)
 	if (!str_cmd && cmd->argv)
 	{
 		access("", F_OK);
-		show_error(cmd, token->start);
+		print_error(token->start, NULL, strerror(errno));
+		//show_error(cmd, token->start);
 		return (0);
 	}
 	do_fork(str_cmd, fd_in, cmd);

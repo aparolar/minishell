@@ -3,14 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_unset.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:21:49 by icastell          #+#    #+#             */
-/*   Updated: 2022/09/05 13:51:17 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 18:28:35 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
+
+static _Bool	check_var_name(char *argv)
+{
+	t_export	export;
+
+	export.str = &argv;
+	export.index = 0;
+	export.check = 0;
+	get_name_var_to_export(&export, argv);
+	if (argv[ft_strlen(export.name)] == '=')
+		export.check = 0;
+	return (export.check);
+	//check_name_var_to_export(&export);
+}
 
 void	builtin_pre_unset(t_command *cmd)
 {
@@ -28,14 +42,16 @@ void	builtin_pre_unset(t_command *cmd)
 	{
 		while (i < count)
 		{
+			if (!check_var_name(argv[i]))
+				print_error("unset", argv[i], NOT_VALID_IDENTIFIER);
 			if ((argv[i]) && get_env_var(argv[i]))
 				remove_env_entry(argv[i]);
 			i++;
 		}
 		free(argv);
 	}
-	return ;
 }
+
 
 void	builtin_unset(t_command *cmd)
 {

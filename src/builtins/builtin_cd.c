@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_cd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 13:11:46 by icastell          #+#    #+#             */
-/*   Updated: 2022/09/05 13:55:24 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 18:52:16 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ static void	change_to_dir(char *str, t_builtin *builtin)
 {
 	if (chdir(str) == -1)
 	{
-		show_error(builtin->cmd, str);
+		print_error("cd", str, strerror(errno));
+		//show_error(builtin->cmd, str);
 		free(builtin->pwd);
 	}
 	else
@@ -46,7 +47,8 @@ static void	change_to_home(t_builtin *builtin)
 {
 	if (chdir(builtin->home) == -1)
 	{
-		show_error(builtin->cmd, builtin->home);
+		print_error("cd", NULL, strerror(errno));
+//		show_error(builtin->cmd, builtin->home);
 		chdir("/");
 	}
 	builtin->oldpwd = builtin->pwd;
