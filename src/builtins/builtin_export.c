@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_export.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:33:33 by icastell          #+#    #+#             */
-/*   Updated: 2022/06/28 18:03:47 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/05 13:49:22 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	builtin_pre_export(t_command *cmd)
 {
 	char	**argv;
 
+	if (ft_lstsize(gs_info()->cmd_lst) > 1)
+		return ;
 	argv = get_array_from_token_lst(cmd->argv);
 	if ((argv) && (ft_array_count(argv)) > 0)
 	{

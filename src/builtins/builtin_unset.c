@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_unset.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:21:49 by icastell          #+#    #+#             */
-/*   Updated: 2022/09/05 12:19:35 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/05 13:51:17 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	builtin_pre_unset(t_command *cmd)
 	size_t	i;
 	size_t	count;
 
+	if (ft_lstsize(gs_info()->cmd_lst) > 1)
+		return ;
 	errno = 0;
 	i = 1;
 	argv = get_array_from_token_lst(cmd->argv);

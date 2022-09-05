@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_cd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 13:11:46 by icastell          #+#    #+#             */
-/*   Updated: 2022/09/01 17:08:36 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 13:55:24 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void	builtin_post_cd(t_command *cmd)
 	char		*home;
 	t_builtin	builtin;
 
+	if (ft_lstsize(gs_info()->cmd_lst) > 1)
+		return ;
 	builtin.oldpwd = NULL;
 	builtin.cmd = cmd;
 	argv = get_array_from_token_lst(cmd->argv);
@@ -78,9 +80,8 @@ void	builtin_post_cd(t_command *cmd)
 			change_to_dir(argv[1], &builtin);
 		else if (!argv[1])
 			change_to_home(&builtin);
-		free(argv);
 	}
-	return ;
+	free(argv);
 }
 
 void	builtin_cd(t_command *cmd)
