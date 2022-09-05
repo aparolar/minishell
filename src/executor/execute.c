@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:19:09 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/04 16:59:01 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 10:01:54 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	execute(int fd_in, t_command *cmd)
 		token = cmd->argv->content;
 		str_cmd = find_command(token->start);
 	}
-	if (!str_cmd)
+	if (!str_cmd && cmd->argv)
 	{
 		access("", F_OK);
 		show_error(cmd, token->start);
