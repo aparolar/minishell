@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 12:39:29 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/05 12:32:03 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 13:06:32 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	builtin_pre_exit(t_command *cmd)
 	{
 		if (ft_is_valid_aint(argv[1]))
 			result = ft_atoi(argv[1]);
-		else if(!silence)
+		else if (!silence)
 			ft_putstr("numeric argument required\n");
 		if (!silence)
 			exit_controlled(result);
