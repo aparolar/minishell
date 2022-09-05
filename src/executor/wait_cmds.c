@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 12:59:24 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/05 11:30:51 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 11:49:54 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	wait_cmds(int n, int last_pid)
 			gs_info()->exit_status = exit_status;
 		n--;
 	}
-	if (exit_status == 130)
+	if (exit_status > 128)
 		write(1, "\n", 1);
 	gs_info()->last_exit_status = gs_info()->exit_status;
 }
