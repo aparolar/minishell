@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 11:30:50 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/03 17:17:08 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 18:38:16 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,15 @@ static char	*get_pwd(void)
 	if (!pwd)
 		pwd = ft_strdup("");
 	return (pwd);
+}
+
+static char	*get_minishell_name(char *str)
+{
+	if (ft_strchr(str, '/'))
+		str++;
+	while (ft_strchr(str, '/'))
+		str++;
+	return (str);
 }
 
 static void	initialize(void)
@@ -40,9 +49,10 @@ static void	initialize(void)
 int	main(int argc, char **argv, char **env)
 {
 	(void)argc;
-	(void)argv;
 	if (gs_info())
 	{
+		gs_info()->minishell_name = get_minishell_name(argv[0]);
+		ft_putendl_fd(gs_info()->minishell_name, 1);
 		init_main_signals();
 		init_delims();
 		parse_env(env);

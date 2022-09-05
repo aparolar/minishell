@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:49:57 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/04 16:46:55 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 18:27:05 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # include <sys/ioctl.h>
 # include <errno.h>
 # include <string.h>
+
 /*
 **  Definitions
 */
@@ -126,6 +127,7 @@ typedef struct s_env_node
 
 typedef struct s_minishell
 {
+	char				*minishell_name;
 	char				*error;
 	int					exit_status;
 	int					last_exit_status;
