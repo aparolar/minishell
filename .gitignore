@@ -1,2 +1,4 @@
 *.o
 *.dSYM
+minishell
+libft/libft.a

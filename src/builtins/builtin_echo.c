@@ -6,7 +6,7 @@
 /*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 17:25:27 by icastell          #+#    #+#             */
-/*   Updated: 2022/09/05 10:51:50 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/05 11:17:30 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,15 @@ static size_t	new_line(char **argv, size_t k)
 	i = 1;
 	if (!ft_strncmp(argv[k], "-n", 2))
 	{
-	while (++i < ft_strlen(argv[k]))
-	{
-		if (argv[k][i] != 'n')
+		while (++i < ft_strlen(argv[k]))
 		{
-			newline = 1;
-			break ;
+			if (argv[k][i] != 'n')
+			{
+				newline = 1;
+				break ;
+			}
 		}
-	}}
+	}
 	else
 		return(1);
 	return (newline);
@@ -88,6 +89,29 @@ static void	print_echo_necesary_args(char **argv, size_t j)
 }
 
 void	builtin_echo(t_command *cmd)
+{
+	_Bool	newline;
+	char	**argv;
+	int		i;
+	//char	**current;
+
+	newline = 1;
+	argv = get_array_from_token_lst(cmd->argv);
+	i = 1;
+	//current = argv;
+	while (!new_line(argv, i))
+	{
+		newline = 0;
+		i++;
+	//	++current;
+	}
+	print_echo_all_args(argv, i);
+	if (newline)
+		ft_putchar_fd('\n', 1);
+	ft_array_free(argv);
+}
+
+void	builtin_echo1(t_command *cmd)
 {
 	size_t	j;
 	size_t	newline;
