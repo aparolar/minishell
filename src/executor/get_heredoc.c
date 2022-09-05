@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 12:58:03 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/05 16:57:32 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 17:09:52 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	read_heredoc(t_command *cmd, t_token *token)
 	char	*line;
 	char	*tmp;
 
-	line = readline(">");
+	line = readline("> ");
 	while (line)
 	{
 		tmp = line;
@@ -61,7 +61,7 @@ static void	read_heredoc(t_command *cmd, t_token *token)
 		ft_putendl_fd(line, cmd->fd_in);
 		free(tmp);
 		free(line);
-		line = readline(">");
+		line = readline("> ");
 	}
 }
 
