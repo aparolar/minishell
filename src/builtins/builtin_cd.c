@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_cd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 13:11:46 by icastell          #+#    #+#             */
-/*   Updated: 2022/09/05 19:18:22 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/05 20:23:58 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ static void	change_to_dir(char *str, t_builtin *builtin)
 	if (chdir(str) == -1)
 	{
 		print_error("cd", str, strerror(errno));
-		//show_error(builtin->cmd, str);
 		free(builtin->pwd);
 	}
 	else

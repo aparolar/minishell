@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_unset.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:21:49 by icastell          #+#    #+#             */
-/*   Updated: 2022/09/05 18:28:35 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/05 20:23:05 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static _Bool	check_var_name(char *argv)
 	if (argv[ft_strlen(export.name)] == '=')
 		export.check = 0;
 	return (export.check);
-	//check_name_var_to_export(&export);
 }
 
 void	builtin_pre_unset(t_command *cmd)
@@ -51,7 +50,6 @@ void	builtin_pre_unset(t_command *cmd)
 		free(argv);
 	}
 }
-
 
 void	builtin_unset(t_command *cmd)
 {

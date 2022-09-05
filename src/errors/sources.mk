@@ -1,5 +1,1 @@
-SRC_ERRORS	=	err_cmd_not_found\
-				err_file_dir_not_found\
-				err_permission_deny\
-				show_error\
-				print_error
+SRC_ERRORS	=	print_error

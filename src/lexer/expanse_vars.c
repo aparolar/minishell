@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 11:31:34 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/05 17:15:44 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 20:15:00 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static void	do_expanse_vars(t_token *token)
 	if (ft_array_count(arr) > 1
 		&& token->flags & (TOKEN_AOUTPUT | TOKEN_SINPUT))
 	{
+		print_error(NULL, token->start, MS_ERR_AMB_REDIR);
 		gs_info()->error = MS_ERR_AMB_REDIR;
 		ft_array_free(arr);
 	}

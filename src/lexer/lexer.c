@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 12:18:15 by aparolar          #+#    #+#             */
-/*   Updated: 2022/05/11 12:13:41 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 20:05:56 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*lexer(void)
 	head = gs_info()->tk;
 	if (!check_consistence(&head))
 	{
-		printf("Error de Sintaxis\n");
+		print_error(NULL, NULL, "syntax error near unexpected token");
 		return (NULL);
 	}
 	else if (ft_lstsize(head) == 1 && !((t_token *)head->content)->start)

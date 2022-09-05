@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:19:09 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/05 19:35:03 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/05 20:23:37 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	check_output_redirs(t_command *cmd)
 		{
 			if (is_directory(token->start))
 			{
-				printf(MS_ERR_IS_DIR);
+				print_error(NULL, token->start, MS_ERR_IS_DIR);
 				gs_info()->exit_status = 1;
 				return (1);
 			}
@@ -82,7 +82,6 @@ int	execute(int fd_in, t_command *cmd)
 	{
 		access("", F_OK);
 		print_error(token->start, NULL, strerror(errno));
-		//show_error(cmd, token->start);
 		return (0);
 	}
 	do_fork(str_cmd, fd_in, cmd);

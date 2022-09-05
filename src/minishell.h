@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:49:57 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/05 19:05:33 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/05 20:20:07 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,6 @@
 /*
 **  Definitions
 */
-
-# define MS_ERR_PIPE              "Error: Wrong pipes.\n"
-# define MS_ERR_EMPTY             "Error: Empty command.\n"
-# define MS_ERR_SYNTAX            "Error: Syntax error.\n"
-# define MS_ERR_AMB_REDIR         "Error: Ambiguous redirection.\n"
-# define MS_ERR_IS_DIR            "Error: Is a directory.\n"
-# define MS_ERR_CMD_NOT_FOUND     "Error: Command not found.\n"
-# define MS_ERR_FILE_O_DIR_NEXIST "Error: Don't exist file or directory.\n"
-# define MS_PERM_DENY             "Error: Permission denied.\n"
 
 # define TOKEN_EMPTY     0x00001
 # define TOKEN_SINPUT    0x00002
@@ -88,17 +79,6 @@ typedef struct s_token
 	char			*start;
 	int				flags;
 }	t_token;
-
-/*
-	la estructura t_command
-		contiene dos listas una del comando y sus argumentos (argv)
-		la otra la lista de redirecciones (redir)
-comando válido | comando válido
-
-definición de comando válido
-
-'texto(cmd) texto(argv)' < texto < texto > texto << texto >> texto
-*/
 
 typedef struct s_command
 {
@@ -369,10 +349,6 @@ void			print_tokens(void *content);
 */
 
 void			print_error(char *name, char *param, char *msg);
-void			show_error(t_command *cmd, char *filename);
-void			err_cmd_not_found(t_command *cmd);
-void			err_file_dir_not_found(t_command *cmd, char *filename);
-void			err_permission_deny(t_command *cmd, char *filename);
 
 /*
 	Signal Functions
