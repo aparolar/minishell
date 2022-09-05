@@ -6,7 +6,7 @@
 /*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 13:11:46 by icastell          #+#    #+#             */
-/*   Updated: 2022/09/05 18:52:16 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/05 19:06:31 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@ static void	change_to_dir(char *str, t_builtin *builtin)
 static void	change_to_home(t_builtin *builtin)
 {
 	if (chdir(builtin->home) == -1)
+		ft_putstr("HOME not set\n");
+	else
 	{
 		print_error("cd", NULL, strerror(errno));
-//		show_error(builtin->cmd, builtin->home);
-		chdir("/");
+		builtin->oldpwd = builtin->pwd;
+		builtin->pwd = getcwd(NULL, 0);
+		update_var_env(builtin);
 	}
-	builtin->oldpwd = builtin->pwd;
-	builtin->pwd = getcwd(NULL, 0);
-	update_var_env(builtin);
 	return ;
 }
 
