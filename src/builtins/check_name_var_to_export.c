@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_name_var_to_export.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 12:07:59 by icastell          #+#    #+#             */
-/*   Updated: 2022/06/28 17:32:35 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/05 19:57:10 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,19 @@
 
 void	check_name_var_to_export(t_export *export)
 {
-	if ((ft_isalpha(export->name[0]) == 0) && (export->name[0] != '_'))
-		export->check = 0;
-	else if ((ft_isalpha(export->name[0]) == 1) || (export->name[0] == '_'))
+	int	i;
+
+	i = 0;
+	export->check = 0;
+	if ((ft_isalpha(export->name[i]) == 1) || (export->name[i] == '_'))
+	{
+		i++;
+		while (export->name[i] != '\0')
+		{
+			if ((ft_isalnum(export->name[i]) == 0) && (export->name[i] != '_'))
+				return ;
+			i++;
+		}
 		export->check = 1;
-	return ;
+	}
 }
