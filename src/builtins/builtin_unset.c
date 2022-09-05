@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtin_unset.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:21:49 by icastell          #+#    #+#             */
-/*   Updated: 2022/09/01 17:11:53 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 12:19:35 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,22 @@
 
 void	builtin_pre_unset(t_command *cmd)
 {
-	char		**argv;
+	char	**argv;
+	size_t	i;
+	size_t	count;
 
 	errno = 0;
+	i = 1;
 	argv = get_array_from_token_lst(cmd->argv);
-	if ((argv) && (ft_array_count(argv)) > 0)
+	count = ft_array_count(argv);
+	if ((argv) && (count > 0))
 	{
-		if ((argv[1]) && get_env_var(argv[1]))
-			remove_env_entry(argv[1]);
+		while (i < count)
+		{
+			if ((argv[i]) && get_env_var(argv[i]))
+				remove_env_entry(argv[i]);
+			i++;
+		}
 		free(argv);
 	}
 	return ;
