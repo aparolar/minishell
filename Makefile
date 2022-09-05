@@ -6,7 +6,7 @@
 #    By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/28 14:55:48 by aparolar          #+#    #+#              #
-#    Updated: 2022/09/05 11:34:19 by aparolar         ###   ########.fr        #
+#    Updated: 2022/09/05 20:36:25 by aparolar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ SRCS			=	$(addprefix src/, $(addsuffix .c, $(SRC))) \
 					$(addprefix src/signals/, $(addsuffix .c, $(SRC_SIGNALS)))
 OBJS			=	$(SRCS:.c=.o)
 DBFLAGS			=	-g3 -fsanitize=address
-FLAGS			=	-Wall -Werror -Wextra $(DBFLAGS)
+FLAGS			=	-Wall -Werror -Wextra
 LDFLAGS			=	-L /Volumes/sgoinfre/students/$(USER)/homebrew/Cellar/readline/8.1.2/lib
 #LDFLAGS			=	-L /usr/local/Cellar/readline/8.1.2/lib
 CPPFLAGS		=	-I /Volumes/sgoinfre/students/$(USER)/homebrew/Cellar/readline/8.1.2/include
