@@ -6,7 +6,7 @@
 /*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:19:09 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/05 10:01:54 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/05 13:37:03 by aparolar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,18 @@ static void	do_fork(char *str_cmd, int fd_in, t_command *cmd)
 		connect_redirections(fd_in, cmd);
 		argv = get_array_from_token_lst(cmd->argv);
 		env = get_env_array();
-		access(str_cmd, R_OK);
-		if (errno == ENOENT && !ft_lstsize(cmd->redir))
+//		access(str_cmd, R_OK);
+/*		if (errno == ENOENT && !ft_lstsize(cmd->redir))
 		{
 			show_error(cmd, str_cmd);
 			exit(127);
-		}
+		}*/
 		cmd->result = execve(str_cmd, argv, env);
+		if (cmd->result == -1)
+			show_error(cmd, str_cmd);
 		exit(cmd->result);
 	}
-	else
-		father_close_fds(fd_in, cmd);
+	father_close_fds(fd_in, cmd);
 }
 
 int	execute(int fd_in, t_command *cmd)
