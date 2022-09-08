@@ -6,7 +6,7 @@
 /*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:49:57 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/08 12:36:20 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/08 18:15:14 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,6 +305,8 @@ void			wait_cmds(int n, int last_pid);
 void			father_close_fds(int fd_in, t_command *cmd);
 void			check_redirecction_errors(int fd, char *filename);
 void			execute_heredocs(t_command *cmd);
+int				maybe_expand(t_token *token);
+void			remove_quotes(t_token *token);
 
 /*
 	Builtin Functions

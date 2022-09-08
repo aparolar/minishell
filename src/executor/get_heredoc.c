@@ -6,7 +6,7 @@
 /*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 12:58:03 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/08 12:48:02 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/08 18:22:18 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,47 +43,12 @@ static void	on_signal(int signo)
 	exit(130);
 }
 
-static int	maybe_expand(t_token *token)
-{
-	int	expand;
-
-	//expand = (ft_strrchr(token->start, 34) || ft_strrchr(token->start, 39));
-	expand = (ft_strchr(token->start, 34) || ft_strchr(token->start, 39));
-	return (expand);
-}
-
-static void	remove_quotes(t_token *token)
-{
-	char	*aux;
-	//size_t	i;
-	//size_t	j;
-
-	aux = ft_strdup(token->start + 1);
-	aux[ft_strlen(aux) - 1] = 0;
-	/*aux = ft_calloc(ft_strlen(token->start) - 2, sizeof(char));
-	i = 0;
-	j = 0;
-	while (token->start[i] != '\0')
-	{
-		if ((token->start[i] != '\'') && (token->start[i] != '\"'))
-		{
-			aux[j] = token->start[i];
-			j++;
-		}
-		i++;
-	}
-	aux[i] = '\0';*/
-	token->start = ft_strdup(aux);
-	free(aux);
-	return ;
-}
-
 static void	read_heredoc(t_command *cmd, t_token *token)
 {
 	char	*line;
 	char	*tmp;
 	int		expand;
-	
+
 	expand = maybe_expand(token);
 	if (expand)
 		remove_quotes(token);

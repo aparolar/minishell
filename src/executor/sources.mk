@@ -13,4 +13,5 @@ SRC_EXECUTOR	=	add_path_to_cmd\
 					get_last_command\
 					get_redirections\
 					is_directory\
-					wait_cmds
+					wait_cmds\
+					heredoc_expand_vars_utils
