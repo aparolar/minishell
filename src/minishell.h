@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aparolar <aparolar@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:49:57 by aparolar          #+#    #+#             */
-/*   Updated: 2022/09/05 20:20:07 by aparolar         ###   ########.fr       */
+/*   Updated: 2022/09/08 12:36:20 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -258,7 +258,7 @@ int				check_consistence(t_list **command_lst);
 t_list			*get_commands(t_list *tokens_lst);
 void			expanse_vars(t_list *cmd_lst, t_env_node *env);
 char			*do_expanse(char *str, char *start, char *end);
-char			*remove_quotes(char *str, int expandable);
+//char			*remove_quotes(char *str, int expandable);
 void			split_expanded_token(t_list *token_lst, char **exp);
 t_command		*get_next_command(t_command *cmd);
 
