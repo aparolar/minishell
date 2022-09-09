@@ -6,7 +6,7 @@
 /*   By: icastell <icastell@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 18:12:42 by icastell          #+#    #+#             */
-/*   Updated: 2022/09/08 20:24:04 by icastell         ###   ########.fr       */
+/*   Updated: 2022/09/09 08:20:11 by icastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,4 @@ void	remove_quotes(t_token *token)
 	token->start = ft_strdup(aux);
 	free(aux);
 	return ;
-	/*aux = ft_strdup(token->start + 1);
-	aux[ft_strlen(aux) - 1] = 0;
-	token->start = ft_strdup(aux);
-	free(aux);
-	return ;*/
 }
