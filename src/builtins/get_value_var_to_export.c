@@ -14,9 +14,6 @@
 
 void	get_value_var_to_export(t_export *export, char *str)
 {
-	int	i;
-
-	i = 0;
 	export->length = ft_strlen(str);
 	if (export->index > 0)
 	{

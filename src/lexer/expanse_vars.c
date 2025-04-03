@@ -25,11 +25,9 @@ static void	get_expansion_var(t_token *token, t_expansion *exp)
 
 static void	do_expanse_vars(t_token *token)
 {
-	char		*tmp;
 	char		**arr;
 	t_expansion	exp;
 
-	tmp = token->start;
 	get_expansion_var(token, &exp);
 	arr = get_expanded_string(&exp);
 	if (ft_array_count(arr) > 1

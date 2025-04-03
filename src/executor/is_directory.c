@@ -25,7 +25,7 @@ int	is_directory(char *dir)
 	ret = opendir(dir);
 	if (ret)
 	{
-		free(ret);
+		//free(ret);
 		return (1);
 	}
 	return (0);

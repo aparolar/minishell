@@ -14,9 +14,6 @@
 
 void	get_name_var_to_export(t_export *export, char *str)
 {
-	int	i;
-
-	i = 0;
 	export->index = get_index(str, '=');
 	if (export->index == 0)
 		export->name = ft_substr(str, 0, ft_strlen(str));

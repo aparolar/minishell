@@ -26,10 +26,8 @@ static t_list	*add_new_subtoken(t_list *token_lst, char *str)
 
 void	split_expanded_token(t_list *token_lst, char **arr)
 {
-	char	*tmp;
 	char	**next;
 
-	tmp = ((t_token *)token_lst->content)->start;
 	next = arr;
 	free(((t_token *)token_lst->content)->start);
 	((t_token *)token_lst->content)->start = *next;

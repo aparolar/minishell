@@ -41,11 +41,9 @@ static void	copy_cmd_fds(int *fds_in, int *fds_out)
 int	execute_cmd(t_list *cmd_lst, t_env_node *env_lst)
 {
 	t_command	*cmd;
-	t_command	*prev;
 	int			fd_in;
 	int			fd[2];
 
-	prev = NULL;
 	cmd = cmd_lst->content;
 	fd_in = 0;
 	while (cmd)
